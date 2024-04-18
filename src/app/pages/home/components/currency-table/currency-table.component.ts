@@ -54,8 +54,8 @@ export class CurrencyTableComponent implements OnChanges {
   }
 
   private paginate() {
-    const from = (this.currentPage - 1) * PAGE_SIZE;
-    const to = this.currentPage * PAGE_SIZE;
+    const from = (this.currentPage - 1) * this.pageSize;
+    const to = this.currentPage * this.pageSize;
 
     this.filteredItems = this.items.slice(from, to);
   }
