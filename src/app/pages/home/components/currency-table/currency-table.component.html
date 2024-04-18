@@ -1,0 +1,32 @@
+<h1>{{ currency }} FX</h1>
+<p>{{ date | date : "dd-MM-yyyy" }}</p>
+
+<table class="table">
+  <thead>
+    <tr>
+      <th scope="col">Currency</th>
+      <th scope="col">Value</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let item of filteredItems">
+      <th scope="row">{{ item.currency }}</th>
+      <td>{{ item.value | number : "0.6-6" : "en-US" }}</td>
+    </tr>
+  </tbody>
+</table>
+
+<div class="paginate">
+  <div class="btn-group" role="group" aria-label="Basic example">
+    <button type="button" class="btn btn-light" (click)="handlePreviousPage()">
+      Previous
+    </button>
+    <button type="button" class="btn">{{ currentPage }}</button>
+    <button type="button" class="btn btn-light" (click)="handleNextPage()">
+      Next
+    </button>
+  </div>
+</div>
+<button type="button" class="btn btn-primary" (click)="handleRefresh()">
+  Refresh
+</button>

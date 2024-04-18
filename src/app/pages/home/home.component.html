@@ -1,0 +1,23 @@
+<div class="table-container">
+  <div class="table-section">
+    <!-- Tabla USD -->
+    <app-currency-table
+      [currency]="currency.USD"
+      [pageSize]="defaultPageSize"
+      [date]="usdDate"
+      [items]="usdItems"
+      (onRefresh)="refreshUsdItems()"
+    ></app-currency-table>
+  </div>
+
+  <div class="table-section">
+    <!-- Tabla EUR -->
+    <app-currency-table
+      [currency]="currency.EUR"
+      [pageSize]="defaultPageSize"
+      [date]="eurDate"
+      [items]="eurItems"
+      (onRefresh)="refreshEurItems()"
+    ></app-currency-table>
+  </div>
+</div>
